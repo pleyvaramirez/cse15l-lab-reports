@@ -77,4 +77,4 @@
    [user@sahara ~/lecture1]$ cat messages
    cat: messages: Is a directory
    ```
-   Running cat with a directory will give us an output that says the argument is a directory, hinting at the fact that it would be more appropriate to use a file as the argument.
+   Running cat with a directory will give us an output that says the argument is a directory, hinting at the fact that it would be more appropriate to use a file as the argument. This is an error.
