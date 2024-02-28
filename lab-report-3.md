@@ -1,7 +1,7 @@
 # Lab Report 3 - Phillip Leyva Ramirez, PID: A17546555
 # Part 1 - Bugs
 
-For this part, we will examine the `reversed` method starting at line 14 in ArrayExamples.java from Lab 4. 
+For this part, we will examine the `reversed` method starting at line 14 in ArrayExamples.java from Lab 4, identify what the bug is, and come up with a solution addressing the bug. 
 
  ```
  static int[] reversed(int[] arr) {
@@ -22,6 +22,7 @@ For this part, we will examine the `reversed` method starting at line 14 in Arra
     assertArrayEquals(new int[]{1, 2, 3}, input1);
   }
 ```
+In this example we create the `input1` array, apply the `reversed` method on it, and compare it to another array in which we manually reversed the order of elements in input1.
 
 2. Input (no failure)
 ```
@@ -31,6 +32,7 @@ For this part, we will examine the `reversed` method starting at line 14 in Arra
     assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
   }
   ```
+In this example, we use `reversed` on `input1`, an empty array. In this case the output happened to be exactly what we expect, an empty array.
 
 4. JUnit Test Output
 ![Screenshot 2024-02-27 195006](https://github.com/pleyvaramirez/cse15l-lab-reports/assets/156385234/3099c32d-53ff-4ac2-9cd8-e7c965e0f450)
@@ -47,7 +49,7 @@ For this part, we will examine the `reversed` method starting at line 14 in Arra
   }
 ```
 
-# Part 2 - Researching The `grep` Command
+# Part 2 - Researching The `grep` Command [^1]
 Recalling that the function `grep` command is to search for a desired string of characters inside a file and output the lines where there was a match which what we're looking for, we can modify the general premise of this command in countless ways:
 
 Using `-c` on `grep` with a file:
@@ -94,8 +96,8 @@ $ grep -i "cardiovascular" biomed/1468-6708-3-1.txt
 ```
 The `-i` command is useful when we want to search for a keyword or phrase insentivively. In other words, capitialization no longer matters in our keyword when we apply `-i`. As can be seen above, we wanted to find the word "cardiovascular" in biomed/1468-6708-3-1.txt. Instances where cardiovascular is capitalized would not have been included in the output if we hadn't applied `-i`.
 
-Using `-ir` with a directory [^1]:
-[^1]: The ellipis was added to indicate that there was more to the output that I did not explcitly include in this lab report here for the sake of simplicity.
+Using `-ir` with a directory [^2]:
+[^2]: The ellipis was added to indicate that there was more to the output that I did not explcitly include in this lab report here for the sake of simplicity.
 ```
 biomed/1468-6708-3-1.txt:        trials to detect survival differences or cardiovascular
 biomed/1468-6708-3-1.txt:          Study design: The Cardiovascular Health
@@ -121,6 +123,7 @@ $ grep -n "Florida" government/About_LSC/Comments_on_semiannual.txt
 67:1 California, Colorado, Florida, Illinois, Indiana, Maine,
 170:retained consultants to assist planning efforts in Florida, North
 ```
+The `-n` command option adds the line number in which our preferred set of characters was found by `grep`. In `government/About_LSC/Comments_on_semiannual.txt`, we can see that "Florida" can be found in lines 67 and 170 of the file. This is a very efficent way of not only identifying whether a keyword is inside a file, but also identifying where in the file it is located.
 
 Using `-nr` with a directory:
 ```
@@ -134,6 +137,7 @@ government/About_LSC/Progress_report.txt:313:Equal Justice Conference in March.
 government/About_LSC/Progress_report.txt:522:conjunction with the Equal Justice Conference and participated in a
 government/About_LSC/Strategic_report.txt:661:Equal Justice Conference to give Internet access to conference
 ```
+Using `-n` combined with `-r` scans every file in a directory and for every line of text it identifies as containing our keyword, it outputs the file name and line number. This is an efficient way of searching for all instances of a string and finding the exact location for each and every instance.
 
 Using `-w` with a file:
 ```
@@ -145,7 +149,7 @@ assist in follow-up and continuity of care.
 medicine departments. If we were to choose one place to set up a
 anti-hypertensives with some type of follow-up.
 ```
-In this example, using `-w` helped print all the times that up appeared as its own word, excluding all other instances in which the characters u and p comprised a larger word.
+As can be seen above `-w` is used to ensure that our string of characters is not part of a larger sequence of strings. In this example, using `-w` helped print all the times that up appeared as its own word, excluding all other instances in which the characters "u" and "p" comprised a larger word. This is helpful for when we want to search for a certain string on its own without including the cases where the string is merely a substring of a larger string.
 
 Using `-wr` with a directory:
 ```
@@ -157,7 +161,6 @@ government/Media/Greedy_Generous.txt:Dec. 23, 2002
 government/Media/Program_Lodges.txt:With Liebler's help, Stimpson was given until Dec. 29 to move.
 government/Media/Survey.txt:Phoenix on Dec. 7 to finalize its report for the ABA's general
 ```
+Using `-wr` to search for "Dec", what we got as an output was a list of all the instances in which December was abbreviated to "Dec" across all files contained in government/Media.
 
-
-Source:
-I refered to https://www.geeksforgeeks.org/grep-command-in-unixlinux/ in order to discover all of these command options for `grep`.
+[^1]: I refered to https://www.geeksforgeeks.org/grep-command-in-unixlinux/ in order to discover all of these command options for `grep`.
