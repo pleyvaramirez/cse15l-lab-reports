@@ -35,7 +35,7 @@ This sended me into `ListExamples.java` while in the vim editor. Now that I was 
 
 ![image](https://github.com/pleyvaramirez/cse15l-lab-reports/assets/156385234/99bb9846-c815-4e93-81a1-89407063cc8b)
 
-I observed that the bug was that this line incremented `index` with `index1 += 1;` instead of incrementing `index2`. The heys pressed from opening the vim editor from until I fixed the bug were [l] [x] [i] [2] [esc]. This sequence of keys fixes the bug in the `merge` method by replacing `index1` with `index2`. The following image shows the bugfixed `merge` method:
+I observed that the bug was that this line incremented `index` with `index1 += 1;` instead of incrementing `index2`. The heys pressed from opening the vim editor from until I fixed the bug were [l] [x] [i] [2] [esc], where [l] moved me to the right 1 space, [x] removed the character I was on, [i] allowed me to insert a character, [2] being the chracter I inserted, and finally [esc] to go back to normal mode. This sequence of keys fixes the bug in the `merge` method by replacing `index1` with `index2`. The following image shows the bugfixed `merge` method:
 
 ![image](https://github.com/pleyvaramirez/cse15l-lab-reports/assets/156385234/3413b092-a5d4-4e6d-b282-a002c4f1ea46)
 
@@ -43,14 +43,14 @@ After this bug was fixed, I then began looking into moving my cursor towards the
 
 ![image](https://github.com/pleyvaramirez/cse15l-lab-reports/assets/156385234/d296888c-9161-4f8a-af5c-029963b4e496)
 
-Continuing where I left off in with my previous keystrokes on Vim, I used the following keys to approach and then fix the bug: [Ctrl+u] [j] [j] [j] [j] [j] [j] [j] [j] [j] [j] [$] [k] [k] [k] [k] [k] [x] [x] [x]. In this case, the bug was that every string element in the new ArrayList was being moved to the first element instead of after the last element in the list. The following image shows wthe bugfixed `filter method` which gets rid of this problem:
+Continuing where I left off in with my previous keystrokes on Vim, I used the following keys to approach and then fix the bug: [Ctrl+u] [j] [j] [j] [j] [j] [j] [j] [j] [j] [j] [$] [k] [k] [k] [k] [k] [x] [x] [x], where [Ctrl+u] moved me up half a page, [j] moves up me a line, [$] moved me to the end of the line, [k] moved me 1 space to the left, and [x] deleted the character that the cursor was on top of. In this case, the bug was that every string element in the new ArrayList was being moved to the first element instead of after the last element in the list. The following image shows wthe bugfixed `filter method` which gets rid of this problem:
 
 ![image](https://github.com/pleyvaramirez/cse15l-lab-reports/assets/156385234/ae452305-6f65-4d4e-a2b1-81d00a17779c)
 
-FInally, I exited the vim editor using the following keys: [:] [w] [q] [!].
+FInally, I exited the vim editor using the following keys: [:] [w] [q] [!], where [:] allowed me to type in a command, [w] to save, anf finally [q] and  [!] to quit the vim editor. 
 
-There were certain keystrokes like <Ctrl+u> that I didn't know about prior to his lab report, so I consulted the following site: https://vimsheet.com/
-This site dubs itself the "Great Vim Cheat Sheet", listing some common Vim commands.
+Note that there were certain keystrokes like <Ctrl+u> that I didn't know about prior to his lab report, so I consulted the following site: https://vimsheet.com/.
+This site dubs itself the "Great Vim Cheat Sheet", listing some common and very applicable Vim commands.
 
 ## Step 8.
 ![image](https://github.com/pleyvaramirez/cse15l-lab-reports/assets/156385234/6f762042-828c-4c9b-87e2-33e816f17866)
